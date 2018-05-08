@@ -1,0 +1,11 @@
+<form method="POST" action="">
+    <input type="text" maxlength="100" name="text" placeholder="Marinador"/>
+    <input type="reset" value="Reset"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<ul>
+    {% for palabra in palabras %}
+        <li>{{ palabra }}</li>
+    {% endfor %}
+</ul>
