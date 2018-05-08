@@ -2,20 +2,21 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .forms import InputForm
+from .strings_counter import StringsCounter
 
 def index(request):
-    form = None
+    dic = None
     if request.method == 'POST':
         form = InputForm(request.POST)
         if form.is_valid():
             # TODO
             input_received = form.cleaned_data['input']
-            print(input_received)
-    else:
-        form = InputForm()
+            print(type(input_received))
+            dic = StringsCounter.count_strings(input_received)
+            print(dic)
 
     context = {
-        'palabras': ['Hola', 'Adios'],
-        'form': form
+        'palabras': dic,
+        'form': InputForm()
     }
     return render(request, 'verificacion/index.html', context)
