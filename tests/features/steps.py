@@ -45,5 +45,5 @@ def expected(step, expected_text):
 @step ('I clean the text field')
 def clean_it(step):
 	world.element  = world.driver.find_element_by_name("input")
-	assert world.element.text == " ", \
+	assert world.element.text == "", \
         "Fail"
