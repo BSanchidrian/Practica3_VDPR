@@ -10,10 +10,10 @@
     <form method="POST" action="">
         {% csrf_token %}
         {{ form }}
-        <input type="reset" value="Reset"/>
-        <input type="submit" value="Submit"/>
+        <input type="reset" value="Reset" id="reset"/>
+        <input type="submit" value="Submit" id="submit"/>
     </form>
-    
+
     <ul>
         {% for palabra in palabras %}
             <li>{{ palabra.0 }} - {{ palabra.1 }}</li>

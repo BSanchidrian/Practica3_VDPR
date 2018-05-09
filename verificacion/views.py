@@ -12,7 +12,8 @@ def index(request):
             # TODO
             input_received = form.cleaned_data['input']
             print(type(input_received))
-            dic = StringsCounter.count_strings(input_received)
+            sc = StringsCounter()
+            dic = sc.count_strings(input_received)
             print(dic)
 
     context = {
