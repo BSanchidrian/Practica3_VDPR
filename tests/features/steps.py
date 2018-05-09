@@ -41,3 +41,9 @@ def expected(step, expected_text):
 
         assert liElement == 0, \
             "Error text size 0"
+
+@step ('I clean the text field')
+def clean_it(step):
+	world.element  = world.driver.find_element_by_name("input")
+	assert world.element.text == " " \
+        "Fail"
